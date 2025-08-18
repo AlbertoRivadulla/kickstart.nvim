@@ -1,0 +1,21 @@
+- [/] Manage buffers
+    - [?] Tabs
+    - [ ] Harpoon
+    - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
+- [ ] Note taking in Markdown
+    - [ ] Links between notes
+    - [ ] Bullet points
+    - [ ] Formatting
+    - [ ] Wrap-around lines
+        - [?] Disable it for other file formats
+- [ ] LSP
+- [ ] Separate config in different files
+    - [ ] Configurations of plugins
+        - [ ] Add plugins in `custom/plugins/init.lua`
+    - [ ] Key maps
+    - [ ] Autocommand
+- [ ] Notes with keyboard shortcuts (grr, gri, ...)
+    - [ ] LSP
+    - [ ] Harpoon (if installed)
+    - [ ] Telescope and search
+    - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
