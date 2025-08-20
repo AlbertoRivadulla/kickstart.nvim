@@ -1,21 +1,57 @@
 - [/] Manage buffers
     - [?] Tabs
+        - [ ] https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
     - [ ] Harpoon
-    - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
+    - [x] Write the description of the command `<leader>x`
+    - [ ] Telescope search 
+        - [ ] Consider also hidden files and directories when searching files
+        - [ ] Search with grep in given directory
 - [ ] Note taking in Markdown
     - [ ] Links between notes
     - [ ] Bullet points
     - [ ] Formatting
-    - [ ] Wrap-around lines
+    - [x] Wrap-around lines
         - [?] Disable it for other file formats
+    - [ ] When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments
+    - [ ] Syntax highlight
+    - [ ] Open links in the browser
 - [ ] LSP
+    - [ ] C++
+        - [ ] Go to links files in includes
+        - [ ] Make use of .clang-format
+    - [ ] Go (gopls)
+    - [ ] Python
+        - [ ] Go to definitions in imports
+    - [ ] Shell
+    - [ ] CMake
+    - [ ] General
+        - [ ] Show function/class declaration/namespaces on top
+        - [ ] Highlight other occurrences of the symbol in which the cursor is resting 
+        - [ ] Add a delay before showing diagnostic messages while writing
 - [ ] Separate config in different files
     - [ ] Configurations of plugins
         - [ ] Add plugins in `custom/plugins/init.lua`
-    - [ ] Key maps
-    - [ ] Autocommand
+    - [ ] File for key maps
+    - [ ] File for autocommand
+- [ ] nvim-tree
+    - [ ] Show files with git changes
+    - [ ] Ctrl+H (going to the tree) should place the cursor at the current file
+- [ ] Scrollbar
+    - [ ] Try satellite.nvim
+    - [ ] Show colors for git changes
+    - [ ] Display the cursor better
 - [ ] Notes with keyboard shortcuts (grr, gri, ...)
     - [ ] LSP
     - [ ] Harpoon (if installed)
     - [ ] Telescope and search
     - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
+    - [ ] nvim-tree (create, delete, copy, rename files, copy path)
+    - [ ] Other shortcuts
+        - [ ] Go to line number
+        - [ ] Print current file path (needs implementation)
+- [ ] Other
+    - [ ] Show the number of lines in the status line
+- [ ] Interesting plugins
+    - [ ] satellite.nvim (instead of scrollbar)
+    - [ ] better-escape.nvim
+    - [ ] local-highlight.nvim
