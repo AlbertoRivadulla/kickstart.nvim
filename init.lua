@@ -385,8 +385,8 @@ require('lazy').setup({
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
-      -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      -- -- Useful for getting pretty icons, but requires a Nerd Font.
+      -- { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -1032,9 +1032,13 @@ require('lazy').setup({
         },
         -- lazy = false,
         hijack_cursor = true,
-        -- Disable git to make startup faster
         git = {
-          enable = false,
+          enable = true,
+          ignore = false
+        },
+        update_focused_file = {
+          enable = true,
+          update_cwd = true,
         },
         renderer = {
           -- Icons to show in the tree
@@ -1043,7 +1047,7 @@ require('lazy').setup({
               file = false,
               folder = false,
               folder_arrow = true,
-              git = false,
+              git = true,
               modified = true,
             },
             glyphs = {
@@ -1052,6 +1056,15 @@ require('lazy').setup({
                 arrow_closed = '>',
               },
               modified = '+',
+              git = {
+                unstaged = "",
+                staged = "S",
+                unmerged = "",
+                renamed = "➜",
+                untracked = "U",
+                deleted = "",
+                ignored = "◌",
+              },
             },
           },
         },

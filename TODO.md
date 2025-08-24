@@ -45,9 +45,9 @@
             - [ ] Move the configuration files for the plugins to that folder
     - [ ] File for key maps
     - [ ] File for autocommand
-- [ ] nvim-tree
-    - [ ] Show files with git changes
-    - [ ] Ctrl+H (going to the tree) should place the cursor at the current file
+- [x] nvim-tree
+    - [x] Show files with git changes
+    - [x] Ctrl+H (going to the tree) should place the cursor at the current file
 - [ ] todo-comments.nvim
     - [ ] Check de documentation and create shortcuts for the most relevant
         - [ ] :TodoLocList
