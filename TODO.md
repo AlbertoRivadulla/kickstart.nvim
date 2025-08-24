@@ -1,0 +1,85 @@
+- [/] Manage buffers
+    - [?] Tabs
+        - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
+    - [ ] Harpoon
+    - [x] Write the description of the command `<leader>x`
+    - [x] Telescope search 
+        - [x] Consider also hidden files and directories when searching files
+        - [x] Search with grep in given directory
+- [/] Note taking in Markdown
+    - [x] Links between notes
+    - [x] Bullet points for TODO etc
+    - [ ] Formatting
+    - [x] Wrap-around lines
+        - [?] Disable it for other file formats
+            - [ ] Use the option `vim.opt.wrap = false`
+        - [x] Split lines only in spaces
+    - [?] When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments
+    -   - Implemented, but I don't like it
+    - [ ] Syntax highlight
+    - [x] Open links in the browser
+    - [?] Embed and open images
+        - Using `gx` on an image's file path it is opened by the OS
+- [/] LSP
+    - [x] Install servers
+        - [x] C++ (clangd)
+            - [x] Go to links files in includes
+            - [ ] Make use of .clang-format
+        - [x] Go (gopls)
+        - [x] Python (pyright)
+            - [x] Go to definitions in imports
+        - [x] Bash (bash-language-server)
+        - [x] CMake (cmake-language-server)
+        - [x] Markdown (marksman, zk)
+    - [x] General
+        - [x] Show function/class declaration/namespaces on top
+        - [x] Highlight other occurrences of the symbol in which the cursor is resting 
+    - [ ] Debugging capabilities
+        - [ ] Look into DAP (Debug Adapter Protocol)
+        - [ ] Check `lua/kickstart/plugins/debug.lua`
+- [?] Autoformat
+    - [x] Currently disabled
+- [ ] Autocomplete (blink.cmp)
+    - [ ] Take a look at the defined keymaps
+- [ ] Separate config in different files
+    - [ ] Configurations of plugins
+        - [ ] Add plugins in `custom/plugins/init.lua`
+            - [ ] Move the configuration files for the plugins to that folder
+    - [ ] File for key maps
+    - [ ] File for autocommand
+- [x] nvim-tree
+    - [x] Show files with git changes
+    - [x] Ctrl+H (going to the tree) should place the cursor at the current file
+- [x] todo-comments.nvim
+    - [x] Check de documentation and create shortcuts for the most relevant
+        - [x] :TodoLocList
+- [ ] Scrollbar
+    - [ ] Try satellite.nvim
+    - [ ] Show colors for git changes
+    - [ ] Display the cursor better
+    - [!] There should be no characters behind the scrollbar
+        - I was not able to do this
+- [ ] Notes with keyboard shortcuts (grr, gri, ...)
+    - [ ] LSP
+    - [ ] Harpoon (if installed)
+    - [ ] Telescope and search
+        - [ ] Case sensitive search
+        - [ ] ...
+    - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
+    - [ ] todo-comments (`<leader>td` to show all TODOs in the project)
+    - [ ] nvim-tree (create, delete, copy, rename files, copy path)
+    - [ ] blink.cmp (move around the options for autocomplete)
+    - [ ] mini.ai
+    - [ ] mini.surround
+    - [ ] ":Lazy", ":Mason"
+    - [ ] Other shortcuts
+        - [ ] Go to line number
+        - [ ] Print current file path (needs implementation)
+        - [ ] Open link in the browser (`gx`)
+- [ ] Other
+    - [x] Show the number of lines in the status line
+- [ ] Interesting plugins
+    - [ ] satellite.nvim (instead of scrollbar)
+    - [ ] better-escape.nvim
+    - [ ] local-highlight.nvim
+- [ ] Look at the plugins in `lua/kickstart/plugins`
