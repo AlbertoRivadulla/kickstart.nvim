@@ -11,7 +11,7 @@ return {
       -- throttle_ms = 100,
       handle = {
           text = " ",
-          blend = 30, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
+          blend = 50, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
           color = nil,
           color_nr = nil, -- cterm
           highlight = "CursorColumn",
@@ -82,7 +82,7 @@ return {
                 highlight = "Normal",
             },
             GitAdd = {
-                text = "┆",
+                text = "+",
                 priority = 7,
                 gui = nil,
                 color = nil,
@@ -147,7 +147,7 @@ return {
             diagnostic = true,
             gitsigns = false, -- Requires gitsigns
             handle = true,
-            search = false, -- Requires hlslens
+            search = true, -- Requires hlslens
             ale = false, -- Requires ALE
         },
     })

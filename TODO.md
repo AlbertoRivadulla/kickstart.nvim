@@ -12,46 +12,70 @@
     - [ ] Formatting
     - [x] Wrap-around lines
         - [?] Disable it for other file formats
+            - [ ] Use the option `vim.opt.wrap = false`
+        - [x] Split lines only in spaces
     - [ ] When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments
     - [ ] Syntax highlight
     - [ ] Open links in the browser
+    - [ ] Embed and open images
 - [ ] LSP
-    - [ ] C++
-        - [ ] Go to links files in includes
-        - [ ] Make use of .clang-format
-    - [ ] Go (gopls)
-    - [ ] Python
-        - [ ] Go to definitions in imports
-    - [ ] Shell
-    - [ ] CMake
+    - [ ] Install servers
+        - [ ] C++ (clangd)
+            - [ ] Go to links files in includes
+            - [ ] Make use of .clang-format
+        - [ ] Go (gopls)
+        - [ ] Python (pyright)
+            - [ ] Go to definitions in imports
+        - [ ] Bash (bash-language-server)
+        - [ ] CMake (cmake-language-server)
+        - [?] Markdown (marksman, zk)
     - [ ] General
         - [ ] Show function/class declaration/namespaces on top
-        - [ ] Highlight other occurrences of the symbol in which the cursor is resting 
+        - [x] Highlight other occurrences of the symbol in which the cursor is resting 
         - [ ] Add a delay before showing diagnostic messages while writing
+    - [ ] Debugging capabilities
+        - [ ] Look into DAP (Debug Adapter Protocol)
+        - [ ] Check `lua/kickstart/plugins/debug.lua`
+- [/] Autoformat
+    - [x] Currently disabled
+- [ ] Autocomplete (blink.cmp)
+    - [ ] Take a look at the defined keymaps
 - [ ] Separate config in different files
     - [ ] Configurations of plugins
         - [ ] Add plugins in `custom/plugins/init.lua`
+            - [ ] Move the configuration files for the plugins to that folder
     - [ ] File for key maps
     - [ ] File for autocommand
 - [ ] nvim-tree
     - [ ] Show files with git changes
     - [ ] Ctrl+H (going to the tree) should place the cursor at the current file
+- [ ] todo-comments.nvim
+    - [ ] Check de documentation and create shortcuts for the most relevant
+        - [ ] :TodoLocList
 - [ ] Scrollbar
     - [ ] Try satellite.nvim
     - [ ] Show colors for git changes
     - [ ] Display the cursor better
+    - [!] There should be no characters behind the scrollbar
+        - I was not able to do this
 - [ ] Notes with keyboard shortcuts (grr, gri, ...)
     - [ ] LSP
     - [ ] Harpoon (if installed)
     - [ ] Telescope and search
+        - [ ] Case sensitive search
+        - [ ] ...
     - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
     - [ ] nvim-tree (create, delete, copy, rename files, copy path)
+    - [ ] blink.cmp (move around the options for autocomplete)
+    - [ ] mini.ai
+    - [ ] mini.surround
     - [ ] Other shortcuts
         - [ ] Go to line number
         - [ ] Print current file path (needs implementation)
 - [ ] Other
-    - [ ] Show the number of lines in the status line
+    - [x] Show the number of lines in the status line
 - [ ] Interesting plugins
     - [ ] satellite.nvim (instead of scrollbar)
     - [ ] better-escape.nvim
     - [ ] local-highlight.nvim
+- [ ] Look at the plugins in `lua/kickstart/plugins`
