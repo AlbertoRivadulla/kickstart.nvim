@@ -452,6 +452,12 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set("n", "<leader>gd", function()
+        local dir = vim.fn.input("Dir: ", "", "dir")
+        if dir ~= "" then
+          builtin.live_grep({ search_dirs = { dir } })
+        end
+      end, { desc = "Live [G]rep in chosen [D]irectory" })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -922,7 +928,11 @@ require('lazy').setup({
   { 'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false }
+    opts = { signs = false },
+    config = function()
+      require('todo-comments').setup({})
+      vim.keymap.set('n', '<leader>td', ':TodoLocList<CR>', { desc = 'Show all TODOs in the project' })
+    end
   },
 
   { -- Collection of various small independent plugins/modules
@@ -991,21 +1001,21 @@ require('lazy').setup({
 
   {
     'nvim-treesitter/nvim-treesitter-context',
-    opts = function()
-      -- local tsc = require("treesitter-context")
-      -- Snacks.toggle({
-      --   name = "Treesitter Context",
-      --   get = tsc.enabled,
-      --   set = function(state)
-      --     if state then
-      --       tsc.enable()
-      --     else
-      --       tsc.disable()
-      --     end
-      --   end,
-      -- }):map("<leader>ut")
-      -- return { mode = "cursor", max_lines = 3 }
-    end
+    -- opts = function()
+    --   local tsc = require("treesitter-context")
+    --   Snacks.toggle({
+    --     name = "Treesitter Context",
+    --     get = tsc.enabled,
+    --     set = function(state)
+    --       if state then
+    --         tsc.enable()
+    --       else
+    --         tsc.disable()
+    --       end
+    --     end,
+    --   }):map("<leader>ut")
+    --   return { mode = "cursor", max_lines = 3 }
+    -- end
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -1135,3 +1145,33 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
   end,
 })
+
+--- Highlight different to-do list elements
+-- Define highlight groups
+vim.api.nvim_set_hl(0, "TodoUnchecked", { fg = "#000000", bg = "#999999", bold = true })
+vim.api.nvim_set_hl(0, "TodoDone", { fg = "#AAAAAA", bg = "#000000", bold = true })
+vim.api.nvim_set_hl(0, "TodoInProgress", { fg = "#000000", bg = "#777777", bold = true })
+vim.api.nvim_set_hl(0, "TodoUncertain", { fg = "#000000", bg = "#f2ac33", bold = true })
+vim.api.nvim_set_hl(0, "TodoWarning", { fg = "#000000", bg = "#CC4444", bold = true })
+-- Match the patterns
+vim.fn.matchadd("TodoUnchecked", "\\[\\s\\]")
+vim.fn.matchadd("TodoDone", "\\[x\\]")
+vim.fn.matchadd("TodoInProgress", "\\[/\\]")
+vim.fn.matchadd("TodoUncertain", "\\[?\\]")
+vim.fn.matchadd("TodoWarning", "\\[!\\]")
+
+-- --- Automatically continue bullet point lists in Markdown files
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "markdown",
+-- 	callback = function()
+-- 		vim.opt_local.formatoptions:append("r") -- `<CR>` in insert mode
+-- 		vim.opt_local.formatoptions:append("o") -- `o` in normal mode
+-- 		vim.opt_local.comments = {
+-- 			"b:- [ ]",
+-- 			"b:- [x]",
+-- 			"b:*", -- unordered list
+-- 			"b:-",
+-- 			"b:+",
+-- 		}
+-- 	end,
+-- })

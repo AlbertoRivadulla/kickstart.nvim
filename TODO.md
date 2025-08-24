@@ -3,21 +3,23 @@
         - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
     - [ ] Harpoon
     - [x] Write the description of the command `<leader>x`
-    - [/] Telescope search 
+    - [x] Telescope search 
         - [x] Consider also hidden files and directories when searching files
-        - [ ] Search with grep in given directory
-- [ ] Note taking in Markdown
-    - [ ] Links between notes
-    - [ ] Bullet points
+        - [x] Search with grep in given directory
+- [/] Note taking in Markdown
+    - [x] Links between notes
+    - [x] Bullet points for TODO etc
     - [ ] Formatting
     - [x] Wrap-around lines
         - [?] Disable it for other file formats
             - [ ] Use the option `vim.opt.wrap = false`
         - [x] Split lines only in spaces
-    - [ ] When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments
+    - [?] When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments
+    -   - Implemented, but I don't like it
     - [ ] Syntax highlight
-    - [ ] Open links in the browser
-    - [ ] Embed and open images
+    - [x] Open links in the browser
+    - [?] Embed and open images
+        - Using `gx` on an image's file path it is opened by the OS
 - [/] LSP
     - [x] Install servers
         - [x] C++ (clangd)
@@ -48,9 +50,9 @@
 - [x] nvim-tree
     - [x] Show files with git changes
     - [x] Ctrl+H (going to the tree) should place the cursor at the current file
-- [ ] todo-comments.nvim
-    - [ ] Check de documentation and create shortcuts for the most relevant
-        - [ ] :TodoLocList
+- [x] todo-comments.nvim
+    - [x] Check de documentation and create shortcuts for the most relevant
+        - [x] :TodoLocList
 - [ ] Scrollbar
     - [ ] Try satellite.nvim
     - [ ] Show colors for git changes
@@ -64,6 +66,7 @@
         - [ ] Case sensitive search
         - [ ] ...
     - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
+    - [ ] todo-comments (`<leader>td` to show all TODOs in the project)
     - [ ] nvim-tree (create, delete, copy, rename files, copy path)
     - [ ] blink.cmp (move around the options for autocomplete)
     - [ ] mini.ai
@@ -72,6 +75,7 @@
     - [ ] Other shortcuts
         - [ ] Go to line number
         - [ ] Print current file path (needs implementation)
+        - [ ] Open link in the browser (`gx`)
 - [ ] Other
     - [x] Show the number of lines in the status line
 - [ ] Interesting plugins
