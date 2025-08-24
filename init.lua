@@ -265,8 +265,8 @@ require('lazy').setup({
   -- Detect shiftwidth automatically
   {
     'nmac427/guess-indent.nvim',
-    config = function() 
-      require('guess-indent').setup {} 
+    config = function()
+      require('guess-indent').setup {}
     end,
   },
 
@@ -691,9 +691,12 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- TODO: Complete this
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
+        clangd = {},
+        gopls = {},
+        pyright = {},
+        bashls = {},
+        cmake = {},
+        marksman = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -986,6 +989,25 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    opts = function()
+      -- local tsc = require("treesitter-context")
+      -- Snacks.toggle({
+      --   name = "Treesitter Context",
+      --   get = tsc.enabled,
+      --   set = function(state)
+      --     if state then
+      --       tsc.enable()
+      --     else
+      --       tsc.disable()
+      --     end
+      --   end,
+      -- }):map("<leader>ut")
+      -- return { mode = "cursor", max_lines = 3 }
+    end
+  },
+
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
@@ -998,7 +1020,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
 
   {
@@ -1058,19 +1080,19 @@ require('lazy').setup({
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+      -- cmd = '⌘',
+      -- config = '🛠',
+      -- event = '📅',
+      -- ft = '📂',
+      -- init = '⚙',
+      -- keys = '🗝',
+      -- plugin = '🔌',
+      -- runtime = '💻',
+      -- require = '🌙',
+      -- source = '📄',
+      -- start = '🚀',
+      -- task = '📌',
+      -- lazy = '💤 ',
     },
   },
 })
@@ -1093,7 +1115,9 @@ vim.api.nvim_create_autocmd('BufEnter', {
   pattern = 'NvimTree_*',
   callback = function()
     local layout = vim.api.nvim_call_function('winlayout', {})
-    if layout[1] == 'leaf' and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), 'filetype') == 'NvimTree' and layout[3] == nil then
+    if layout[1] == 'leaf' and
+      vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), 'filetype') == 'NvimTree' and
+      layout[3] == nil then
       vim.cmd 'confirm quit'
     end
   end,

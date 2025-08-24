@@ -1,10 +1,10 @@
 - [/] Manage buffers
     - [?] Tabs
-        - [ ] https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
+        - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
     - [ ] Harpoon
     - [x] Write the description of the command `<leader>x`
-    - [ ] Telescope search 
-        - [ ] Consider also hidden files and directories when searching files
+    - [/] Telescope search 
+        - [x] Consider also hidden files and directories when searching files
         - [ ] Search with grep in given directory
 - [ ] Note taking in Markdown
     - [ ] Links between notes
@@ -18,25 +18,24 @@
     - [ ] Syntax highlight
     - [ ] Open links in the browser
     - [ ] Embed and open images
-- [ ] LSP
-    - [ ] Install servers
-        - [ ] C++ (clangd)
-            - [ ] Go to links files in includes
+- [/] LSP
+    - [x] Install servers
+        - [x] C++ (clangd)
+            - [x] Go to links files in includes
             - [ ] Make use of .clang-format
-        - [ ] Go (gopls)
-        - [ ] Python (pyright)
-            - [ ] Go to definitions in imports
-        - [ ] Bash (bash-language-server)
-        - [ ] CMake (cmake-language-server)
-        - [?] Markdown (marksman, zk)
-    - [ ] General
-        - [ ] Show function/class declaration/namespaces on top
+        - [x] Go (gopls)
+        - [x] Python (pyright)
+            - [x] Go to definitions in imports
+        - [x] Bash (bash-language-server)
+        - [x] CMake (cmake-language-server)
+        - [x] Markdown (marksman, zk)
+    - [x] General
+        - [x] Show function/class declaration/namespaces on top
         - [x] Highlight other occurrences of the symbol in which the cursor is resting 
-        - [ ] Add a delay before showing diagnostic messages while writing
     - [ ] Debugging capabilities
         - [ ] Look into DAP (Debug Adapter Protocol)
         - [ ] Check `lua/kickstart/plugins/debug.lua`
-- [/] Autoformat
+- [?] Autoformat
     - [x] Currently disabled
 - [ ] Autocomplete (blink.cmp)
     - [ ] Take a look at the defined keymaps
@@ -69,6 +68,7 @@
     - [ ] blink.cmp (move around the options for autocomplete)
     - [ ] mini.ai
     - [ ] mini.surround
+    - [ ] ":Lazy", ":Mason"
     - [ ] Other shortcuts
         - [ ] Go to line number
         - [ ] Print current file path (needs implementation)
