@@ -33,6 +33,8 @@
         - [x] Markdown (marksman, zk)
     - [x] General
         - [x] Show function/class declaration/namespaces on top
+            - [ ] If there are comments below the signature, do not show them
+            - [ ] Shortcut to toggle it
         - [x] Highlight other occurrences of the symbol in which the cursor is resting 
     - [ ] Debugging capabilities
         - [ ] Look into DAP (Debug Adapter Protocol)
@@ -43,16 +45,26 @@
     - [ ] Take a look at the defined keymaps
 - [ ] Separate config in different files
     - [ ] Configurations of plugins
-        - [ ] Add plugins in `custom/plugins/init.lua`
+        - [ ] Add plugins in `lua/custom/plugins`, and import them in `lua/custom/plugins.init.lua`
             - [ ] Move the configuration files for the plugins to that folder
     - [ ] File for key maps
     - [ ] File for autocommand
+    - Example [link](https://github.com/dam9000/kickstart-modular.nvim/tree/master)
+    - Example [link](https://github.com/apereiroc/dotfiles/tree/main)
 - [x] nvim-tree
     - [x] Show files with git changes
     - [x] Ctrl+H (going to the tree) should place the cursor at the current file
+    - [ ] Show the hierarchy of the current file on the lines on top
+    - [ ] Try to replace it by neo-tree, if it is faster
+        - [ ] Keybindings similar to nvim-tree
+        - [ ] Show files with git changes
+        - [ ] Ctrl+H (going to the tree) should place the cursor at the current file
+        - [ ] Show the hierarchy of the current file on the lines on top
+        - [ ] Open it at startup, and close when closing the last buffer
 - [x] todo-comments.nvim
     - [x] Check de documentation and create shortcuts for the most relevant
         - [x] :TodoLocList
+    - [ ] Command to show the comments in the current file (`<leader>td` for the current file, `<leader>Td` for all)
 - [ ] Scrollbar
     - [ ] Try satellite.nvim
     - [ ] Show colors for git changes
@@ -63,13 +75,16 @@
     - [x] Change the color of the text for current line blame (`<leader>tb`)
 - [ ] Notes with keyboard shortcuts (grr, gri, ...)
     - [ ] LSP
+        - [ ] `gf` to open the link to a file
     - [ ] Harpoon (if installed)
     - [ ] Telescope and search
         - [ ] Case sensitive search
         - [ ] ...
     - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
     - [ ] todo-comments (`<leader>td` to show all TODOs in the project)
-    - [ ] nvim-tree (create, delete, copy, rename files, copy path)
+    - [ ] nvim-tree 
+        - [ ] Actions on files: create, delete, copy, rename files, copy path
+        - [ ] Collapse all
     - [ ] blink.cmp (move around the options for autocomplete)
     - [ ] mini.ai
     - [ ] mini.surround
