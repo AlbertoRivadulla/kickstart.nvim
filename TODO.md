@@ -59,6 +59,8 @@
     - [ ] Display the cursor better
     - [!] There should be no characters behind the scrollbar
         - I was not able to do this
+- [ ] Gitsigns
+    - [x] Change the color of the text for current line blame (`<leader>tb`)
 - [ ] Notes with keyboard shortcuts (grr, gri, ...)
     - [ ] LSP
     - [ ] Harpoon (if installed)

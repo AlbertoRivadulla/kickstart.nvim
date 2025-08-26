@@ -38,6 +38,7 @@ return {
           -- Toggles
           map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
           map('n', '<leader>tw', gitsigns.toggle_word_diff)
+          vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {fg = "#AAAAAA"})
         end,
       }
       require('scrollbar.handlers.gitsigns').setup()
