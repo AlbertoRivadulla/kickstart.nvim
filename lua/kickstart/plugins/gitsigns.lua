@@ -17,6 +17,7 @@ return {
     config = function()
       -- require('gitsigns').setup()
       require('gitsigns').setup {
+        sign_priority=100,
         on_attach = function(bufnr)
           local gitsigns = require 'gitsigns'
 
@@ -26,6 +27,7 @@ return {
             vim.keymap.set(mode, l, r, opts)
           end
 
+          -- TODO: Write description of these commands
           map('n', '<leader>hb', function()
             gitsigns.blame_line { full = true }
           end)

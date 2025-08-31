@@ -3,6 +3,7 @@ return {
     'petertriho/nvim-scrollbar',
     config = function()
     require("scrollbar").setup({
+      -- Custom cursor highlight
       show = true,
       set_highlights = true,
       folds = 1000, -- handle folds, set to number to disable folds if no. of lines in buffer exceeds this
@@ -19,13 +20,13 @@ return {
       },
         marks = {
             Cursor = {
-                text = "-",
+                text = "*",
                 priority = 0,
                 gui = nil,
-                color = nil,
+                color = "#FFFFFF",
                 cterm = nil,
                 color_nr = nil, -- cterm
-                highlight = "Normal",
+                highlight = "Cursor",
             },
             Search = {
                 text = { "-", "=" },
@@ -85,7 +86,7 @@ return {
                 text = "+",
                 priority = 7,
                 gui = nil,
-                color = nil,
+                color = "#22FF22",
                 cterm = nil,
                 color_nr = nil, -- cterm
                 highlight = "GitSignsAdd",
@@ -103,7 +104,7 @@ return {
                 text = "▁",
                 priority = 7,
                 gui = nil,
-                color = nil,
+                color = "#FF2222",
                 cterm = nil,
                 color_nr = nil, -- cterm
                 highlight = "GitSignsDelete",
@@ -145,7 +146,7 @@ return {
         handlers = {
             cursor = true,
             diagnostic = true,
-            gitsigns = false, -- Requires gitsigns
+            gitsigns = true, -- Requires gitsigns
             handle = true,
             search = true, -- Requires hlslens
             ale = false, -- Requires ALE

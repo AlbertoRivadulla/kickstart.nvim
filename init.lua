@@ -85,18 +85,23 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 --
 
+-- disable netrw at the very start of your init.lua, needed for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Use the Lua loader, to make startup faster
 vim.loader.enable()
+
+-- Reduce the LSP log level
+--  Default "WARN"
+--  It is possible to turn this off with "off"
+vim.lsp.set_log_level("ERROR")
 
 -- Set <space> as the leader key
 -- see `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- disable netrw at the very start of your init.lua, needed for nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -139,8 +144,8 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Keep signcolumn on by default
-vim.o.signcolumn = 'yes'
+-- Keep signcolumn on by default, with a width of 2
+vim.o.signcolumn = 'yes:2'
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -180,8 +185,14 @@ vim.o.confirm = true
 -- Split lines at spaces
 vim.o.linebreak = true
 
+-- Disable word wrap
+vim.opt.wrap = false
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+
+-- Use "jk" to input "Esc" in insert mode
+vim.keymap.set("i", "jk", "<Esc>")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -264,7 +275,6 @@ rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- Detect shiftwidth automatically
   {
@@ -277,8 +287,6 @@ require('lazy').setup({
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
   --
   -- Add a scroll bar with highlights for errors and git changes
   require 'kickstart.plugins.scrollbar',
@@ -600,6 +608,24 @@ require('lazy').setup({
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
           map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
+
+          -- Toggle display of diagnostics
+          vim.keymap.set("n", "<leader>di", function()
+            local current = vim.diagnostic.config().virtual_text
+            if current then
+              vim.diagnostic.config({ virtual_text = false })
+            else
+              vim.diagnostic.config({ virtual_text = true })
+            end
+          end, { desc = "Toggle display of diagnostics on virtual text" })
+          vim.keymap.set("n", "<leader>de", function()
+            local current = vim.diagnostic.config().virtual_lines
+            if current then
+              vim.diagnostic.config({ virtual_lines = false })
+            else
+              vim.diagnostic.config({ virtual_lines = true })
+            end
+          end, { desc = "Toggle display of diagnostics on virtual text" })
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
@@ -935,7 +961,11 @@ require('lazy').setup({
     opts = { signs = false },
     config = function()
       require('todo-comments').setup({})
-      vim.keymap.set('n', '<leader>td', ':TodoLocList<CR>', { desc = 'Show all TODOs in the project' })
+      vim.keymap.set('n', '<leader>tD', ':TodoLocList<CR>', { desc = 'Show all TODOs in the project' })
+      vim.keymap.set("n", '<leader>td', function()
+        local cur_filepath = vim.fn.expand('%:p')  -- full path of current file
+        vim.cmd('TodoLocList cwd=' .. vim.fn.fnameescape(cur_filepath))
+      end, { desc = 'Show all TODOs in the current file' })
     end
   },
 
@@ -999,27 +1029,29 @@ require('lazy').setup({
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-    --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
   {
     'nvim-treesitter/nvim-treesitter-context',
-    -- opts = function()
-    --   local tsc = require("treesitter-context")
-    --   Snacks.toggle({
-    --     name = "Treesitter Context",
-    --     get = tsc.enabled,
-    --     set = function(state)
-    --       if state then
-    --         tsc.enable()
-    --       else
-    --         tsc.disable()
-    --       end
-    --     end,
-    --   }):map("<leader>ut")
-    --   return { mode = "cursor", max_lines = 3 }
-    -- end
+    config = function()
+      require("treesitter-context").setup{
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        multiwindow = false, -- Enable multiwindow support.
+        -- max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+        -- min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+        line_numbers = true,
+        multiline_threshold = 20, -- Maximum number of lines to show for a single context
+        trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+        mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+        -- Separator between context and content. Should be a single character string, like '-'.
+        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        separator = nil,
+        zindex = 20, -- The Z-index of the context window
+        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+        vim.keymap.set('n', '<leader>tc', ':TSContext toggle<CR>', { desc = 'Toggle context' })
+      }
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -1052,9 +1084,13 @@ require('lazy').setup({
         },
         update_focused_file = {
           enable = true,
+          update_root = true,
           -- update_cwd = true,
         },
+        sync_root_with_cwd = true,
+        respect_buf_cwd = true,
         renderer = {
+          highlight_git = true,
           -- Icons to show in the tree
           icons = {
             show = {

@@ -1,22 +1,22 @@
 - [/] Manage buffers
-    - [?] Tabs
+    - [x] ~~Tabs~~
         - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
     - [ ] Harpoon
     - [x] Write the description of the command `<leader>x`
     - [x] Telescope search 
         - [x] Consider also hidden files and directories when searching files
         - [x] Search with grep in given directory
-- [/] Note taking in Markdown
+- [x] Note taking in Markdown
     - [x] Links between notes
     - [x] Bullet points for TODO etc
-    - [ ] Formatting
+    - [x] Formatting
     - [x] Wrap-around lines
-        - [?] Disable it for other file formats
-            - [ ] Use the option `vim.opt.wrap = false`
+        - [x] Disable it for other file formats
+            - [x] Use the option `vim.opt.wrap = false`
         - [x] Split lines only in spaces
-    - [?] When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments
+    - [x] ~~When pressing "Enter" in a line with a bullet point, add a bullet point in the next, and same for comments~~
     -   - Implemented, but I don't like it
-    - [ ] Syntax highlight
+    - [x] Syntax highlight
     - [x] Open links in the browser
     - [?] Embed and open images
         - Using `gx` on an image's file path it is opened by the OS
@@ -25,24 +25,43 @@
         - [x] C++ (clangd)
             - [x] Go to links files in includes
             - [ ] Make use of .clang-format
+            - [ ] Take into account `compile_commands.json`
         - [x] Go (gopls)
         - [x] Python (pyright)
-            - [x] Go to definitions in imports
+            - [ ] Find a way to use the environment consistently
         - [x] Bash (bash-language-server)
         - [x] CMake (cmake-language-server)
         - [x] Markdown (marksman, zk)
     - [x] General
         - [x] Show function/class declaration/namespaces on top
-            - [ ] If there are comments below the signature, do not show them
-            - [ ] Shortcut to toggle it
+            - [x] Shortcut to toggle it
         - [x] Highlight other occurrences of the symbol in which the cursor is resting 
+        - [x] Shortcut to toggle diagnostics
     - [ ] Debugging capabilities
         - [ ] Look into DAP (Debug Adapter Protocol)
         - [ ] Check `lua/kickstart/plugins/debug.lua`
-- [?] Autoformat
+- [x] ~~Autoformat~~
     - [x] Currently disabled
 - [ ] Autocomplete (blink.cmp)
     - [ ] Take a look at the defined keymaps
+- [x] nvim-tree
+    - [x] Show files with git changes
+    - [x] Ctrl+H (going to the tree) should place the cursor at the current file
+    - [ ] Show the hierarchy of the current file on the lines on top
+- [x] todo-comments.nvim
+    - [x] Check de documentation and create shortcuts for the most relevant
+        - [x] :TodoLocList
+    - [x] Command to show the comments in the current file (`<leader>td` for the current file, `<leader>tD` for all)
+- [x] Scrollbar
+    - [x] ~~Try satellite.nvim~~
+    - [x] Show colors for git changes
+    - [x] Display the cursor better
+    - [!] There should be no characters behind the scrollbar
+        - I was not able to do this
+- [x] Gitsigns
+    - [x] Change the color of the text for current line blame (`<leader>tb`)
+    - [x] Git changes should be seen in the left bar even with diagnostics or todo-comments signs
+        - [x] Find a way to show both side by side
 - [ ] Separate config in different files
     - [ ] Configurations of plugins
         - [ ] Add plugins in `lua/custom/plugins`, and import them in `lua/custom/plugins.init.lua`
@@ -51,52 +70,41 @@
     - [ ] File for autocommand
     - Example [link](https://github.com/dam9000/kickstart-modular.nvim/tree/master)
     - Example [link](https://github.com/apereiroc/dotfiles/tree/main)
-- [x] nvim-tree
-    - [x] Show files with git changes
-    - [x] Ctrl+H (going to the tree) should place the cursor at the current file
-    - [ ] Show the hierarchy of the current file on the lines on top
-    - [ ] Try to replace it by neo-tree, if it is faster
-        - [ ] Keybindings similar to nvim-tree
-        - [ ] Show files with git changes
-        - [ ] Ctrl+H (going to the tree) should place the cursor at the current file
-        - [ ] Show the hierarchy of the current file on the lines on top
-        - [ ] Open it at startup, and close when closing the last buffer
-- [x] todo-comments.nvim
-    - [x] Check de documentation and create shortcuts for the most relevant
-        - [x] :TodoLocList
-    - [ ] Command to show the comments in the current file (`<leader>td` for the current file, `<leader>Td` for all)
-- [ ] Scrollbar
-    - [ ] Try satellite.nvim
-    - [ ] Show colors for git changes
-    - [ ] Display the cursor better
-    - [!] There should be no characters behind the scrollbar
-        - I was not able to do this
-- [ ] Gitsigns
-    - [x] Change the color of the text for current line blame (`<leader>tb`)
 - [ ] Notes with keyboard shortcuts (grr, gri, ...)
     - [ ] LSP
         - [ ] `gf` to open the link to a file
+        - [ ] `gx` to open a URL link
+        - [ ] Shortcuts to open/expand diagnostics
+            - `<leader>di` to display diagnostics inline (virtual text)
+            - `<leader>de` to display diagnostics in additional lines (virtual lines)
     - [ ] Harpoon (if installed)
     - [ ] Telescope and search
         - [ ] Case sensitive search
         - [ ] ...
     - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
-    - [ ] todo-comments (`<leader>td` to show all TODOs in the project)
-    - [ ] nvim-tree 
+    - [ ] todo-comments (`<leader>tD` to show all notes in the project, `<leader>td` to show notes in the current file)
+    - [ ] nvim-tree
+        - [ ] Shortcuts in [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
         - [ ] Actions on files: create, delete, copy, rename files, copy path
         - [ ] Collapse all
+    - [ ] treesitter-context
+        - [ ] `<leader>tc` to toggle the context
     - [ ] blink.cmp (move around the options for autocomplete)
     - [ ] mini.ai
     - [ ] mini.surround
-    - [ ] ":Lazy", ":Mason"
+    - [ ] ":Lazy", ":Mason"LocList
     - [ ] Other shortcuts
         - [ ] Go to line number
         - [ ] Print current file path (needs implementation)
         - [ ] Open link in the browser (`gx`)
-- [ ] Other
+        - [ ] Vertical split with `:vs`
+- [/] Other
     - [x] Show the number of lines in the status line
+    - [ ] Install nerdfont in the work laptop
+    - [x] Use `jk` for `Esc` in insert mode
 - [ ] Interesting plugins
-    - [ ] satellite.nvim (instead of scrollbar)
+    - [x] ~~satellite.nvim~~ (instead of scrollbar)
     - [ ] better-escape.nvim
     - [ ] local-highlight.nvim
+    - [ ] trouble.nvim
 - [ ] Look at the plugins in `lua/kickstart/plugins`
