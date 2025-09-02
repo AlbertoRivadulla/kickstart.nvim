@@ -6,7 +6,7 @@
     - [x] Telescope search 
         - [x] Consider also hidden files and directories when searching files
         - [x] Search with grep in given directory
-- [x] Note taking in Markdown
+- [/] Note taking in Markdown
     - [x] Links between notes
     - [x] Bullet points for TODO etc
     - [x] Formatting
@@ -20,6 +20,7 @@
     - [x] Open links in the browser
     - [?] Embed and open images
         - Using `gx` on an image's file path it is opened by the OS
+    - [ ] When writing a link to a file (with `[[..]]`), it should provide autocompletion suggestions
 - [/] LSP
     - [x] Install servers
         - [x] C++ (clangd)
@@ -35,6 +36,7 @@
     - [x] General
         - [x] Show function/class declaration/namespaces on top
             - [x] Shortcut to toggle it
+            - [ ] Show only the lines relevant to the position of the cursor
         - [x] Highlight other occurrences of the symbol in which the cursor is resting 
         - [x] Shortcut to toggle diagnostics
     - [ ] Debugging capabilities
@@ -62,6 +64,8 @@
     - [x] Change the color of the text for current line blame (`<leader>tb`)
     - [x] Git changes should be seen in the left bar even with diagnostics or todo-comments signs
         - [x] Find a way to show both side by side
+- [ ] Support for Golang
+    - [ ] Plugin `fatih/vim-go`
 - [ ] Separate config in different files
     - [ ] Configurations of plugins
         - [ ] Add plugins in `lua/custom/plugins`, and import them in `lua/custom/plugins.init.lua`
@@ -89,7 +93,7 @@
         - [ ] Collapse all
     - [ ] treesitter-context
         - [ ] `<leader>tc` to toggle the context
-    - [ ] blink.cmp (move around the options for autocomplete)
+    - [ ] blink.cmp (move around the options for autocomplete) (notes in the config file)
     - [ ] mini.ai
     - [ ] mini.surround
     - [ ] ":Lazy", ":Mason"LocList
@@ -100,11 +104,12 @@
         - [ ] Vertical split with `:vs`
 - [/] Other
     - [x] Show the number of lines in the status line
-    - [ ] Install nerdfont in the work laptop
+    - [x] Install nerdfont in the work laptop
     - [x] Use `jk` for `Esc` in insert mode
-- [ ] Interesting plugins
+- [/] Interesting plugins
     - [x] ~~satellite.nvim~~ (instead of scrollbar)
-    - [ ] better-escape.nvim
-    - [ ] local-highlight.nvim
-    - [ ] trouble.nvim
+    - [x] better-escape.nvim
+    - [?] trouble.nvim
+    - [ ] Harpoon
 - [ ] Look at the plugins in `lua/kickstart/plugins`
+    - [ ] `nvim-lint`
