@@ -730,6 +730,38 @@ require('lazy').setup({
         clangd = {},
         gopls = {},
         pyright = {},
+        -- basedpyright = {
+        --   mason = false,
+        --   autostart = false
+        -- },
+        -- basedpyright = {
+        --   -- Reference https://docs.basedpyright.com/v1.21.0/configuration/config-files/
+        --   settings = {
+        --     basedpyright = {
+        --       analysis = {
+        --         useLibraryCodeForTypes = true,
+        --         typeCheckingMode = 'basic',
+        --         diagnosticMode = 'workspace',
+        --         autoSearchPath = true,
+        --         inlayHints = {
+        --           callArgumentNames = true,
+        --         },
+        --         -- extraPaths = {
+        --         --     '...',
+        --         --     '...',
+        --         -- },
+        --       },
+        --       -- python = {
+        --       --   venvPath = '/path/to/venv',
+        --       --   venv = 'venv',
+        --       -- },
+        --     },
+        --     python = {
+        --       pythonPath = "/opt/exasol/runtime-2025.1.0/bin/python"
+        --     }
+        --   },
+        -- },
+        -- ruff = {},
         bashls = {},
         cmake = {},
         marksman = {},
@@ -1086,7 +1118,7 @@ require('lazy').setup({
         },
         update_focused_file = {
           enable = true,
-          update_root = true,
+          update_root = false,
           -- update_cwd = true,
         },
         sync_root_with_cwd = true,
