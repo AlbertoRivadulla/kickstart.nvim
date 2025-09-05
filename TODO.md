@@ -46,6 +46,7 @@
     - [x] Currently disabled
 - [ ] Autocomplete (blink.cmp)
     - [ ] Take a look at the defined keymaps
+    - [ ] Consider `mini.completion`
 - [x] nvim-tree
     - [x] Show files with git changes
     - [x] Ctrl+H (going to the tree) should place the cursor at the current file
@@ -96,6 +97,7 @@
     - [ ] blink.cmp (move around the options for autocomplete) (notes in the config file)
     - [ ] mini.ai
     - [ ] mini.surround
+        - [ ] Maybe replace some keymap
     - [ ] ":Lazy", ":Mason"LocList
     - [ ] Other shortcuts
         - [ ] Go to line number

@@ -188,6 +188,9 @@ vim.o.linebreak = true
 -- Disable word wrap
 vim.opt.wrap = false
 
+-- Match also pairs of angle brackets
+vim.opt.matchpairs:append("<:>")
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -1107,6 +1110,13 @@ require('lazy').setup({
     'nvim-tree/nvim-tree.lua',
     config = function()
       require('nvim-tree').setup {
+        actions = {
+          open_file = {
+            window_picker = {
+              enable = false
+            }
+          }
+        },
         filters = {
           dotfiles = false,
         },
