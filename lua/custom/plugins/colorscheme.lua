@@ -4,7 +4,8 @@ return {
   --   -- 'folke/tokyonight.nvim',
   --   -- 'ellisonleao/gruvbox.nvim',
   --   -- "bluz71/vim-nightfly-colors",
-  --   "rose-pine/neovim",
+  --   -- "rose-pine/neovim",
+  --   "sainnhe/gruvbox-material",
   --   priority = 1000, -- Make sure to load this before all the other start plugins.
   --   config = function()
   --     -- Load the colorscheme here.
@@ -14,7 +15,7 @@ return {
   --     -- vim.cmd.colorscheme 'gruvbox'
   --     -- vim.cmd.colorscheme 'nightfly'
   --     -- vim.cmd.colorscheme 'rose-pine'
-  --     vim.cmd.colorscheme 'rose-pine-main'
+  --     vim.cmd.colorscheme 'gruvbox-material'
   --   end,
   -- },
   -- {
@@ -106,6 +107,7 @@ return {
           light = "lotus",
         },
       })
+      vim.cmd("colorscheme kanagawa")
     end,
   },
 }
