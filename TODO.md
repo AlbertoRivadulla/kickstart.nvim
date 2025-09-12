@@ -113,5 +113,6 @@
     - [x] better-escape.nvim
     - [?] trouble.nvim
     - [ ] Harpoon
+    - [?] Aerial
 - [ ] Look at the plugins in `lua/kickstart/plugins`
     - [ ] `nvim-lint`
