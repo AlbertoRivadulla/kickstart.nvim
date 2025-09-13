@@ -27,19 +27,18 @@ return {
             vim.keymap.set(mode, l, r, opts)
           end
 
-          -- TODO: Write description of these commands
           map('n', '<leader>hb', function()
             gitsigns.blame_line { full = true }
-          end)
+          end, { desc = 'Show blame in a popup' })
 
-          map('n', '<leader>hd', gitsigns.diffthis)
+          map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Diff with HEAD' })
 
           map('n', '<leader>hD', function()
             gitsigns.diffthis '~'
-          end)
+          end, { desc = 'Diff with the previous commit' })
           -- Toggles
-          map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
-          map('n', '<leader>tw', gitsigns.toggle_word_diff)
+          map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Show blame inline' })
+          map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = 'Toggle word diff' })
           vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {fg = "#AAAAAA"})
         end,
       }
