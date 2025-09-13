@@ -46,6 +46,7 @@
     - [x] Currently disabled
 - [ ] Autocomplete (blink.cmp)
     - [ ] Take a look at the defined keymaps
+    - [ ] Consider `mini.completion`
 - [x] nvim-tree
     - [x] Show files with git changes
     - [x] Ctrl+H (going to the tree) should place the cursor at the current file
@@ -74,34 +75,33 @@
     - [ ] File for autocommand
     - Example [link](https://github.com/dam9000/kickstart-modular.nvim/tree/master)
     - Example [link](https://github.com/apereiroc/dotfiles/tree/main)
-- [ ] Notes with keyboard shortcuts (grr, gri, ...)
-    - [ ] LSP
-        - [ ] `gf` to open the link to a file
-        - [ ] `gx` to open a URL link
-        - [ ] Shortcuts to open/expand diagnostics
+- [/] Notes with keyboard shortcuts (grr, gri, ...)
+    - [x] LSP
+        - [x] `gf` to open the link to a file
+        - [x] `gx` to open a URL link
+        - [x] Shortcuts to open/expand diagnostics
             - `<leader>di` to display diagnostics inline (virtual text)
             - `<leader>de` to display diagnostics in additional lines (virtual lines)
     - [ ] Harpoon (if installed)
-    - [ ] Telescope and search
+    - [x] Telescope and search
         - [ ] Case sensitive search
-        - [ ] ...
-    - [ ] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
-    - [ ] todo-comments (`<leader>tD` to show all notes in the project, `<leader>td` to show notes in the current file)
-    - [ ] nvim-tree
-        - [ ] Shortcuts in [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
-        - [ ] Actions on files: create, delete, copy, rename files, copy path
-        - [ ] Collapse all
-    - [ ] treesitter-context
-        - [ ] `<leader>tc` to toggle the context
-    - [ ] blink.cmp (move around the options for autocomplete) (notes in the config file)
+    - [x] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
+    - [x] todo-comments (`<leader>tD` to show all notes in the project, `<leader>td` to show notes in the current file)
+    - [x] nvim-tree
+        - [x] Shortcuts in [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
+        - [x] Actions on files: create, delete, copy, rename files, copy path
+        - [x] Collapse all
+    - [x] treesitter-context
+        - [x] `<leader>tc` to toggle the context
+    - [x] blink.cmp (move around the options for autocomplete) (notes in the config file)
     - [ ] mini.ai
     - [ ] mini.surround
-    - [ ] ":Lazy", ":Mason"LocList
-    - [ ] Other shortcuts
-        - [ ] Go to line number
+        - [ ] Maybe replace some keymap
+    - [x] ":Lazy", ":Mason"LocList
+    - [/] Other shortcuts
+        - [x] Go to line number
+        - [x] Vertical split with `:vs`
         - [ ] Print current file path (needs implementation)
-        - [ ] Open link in the browser (`gx`)
-        - [ ] Vertical split with `:vs`
 - [/] Other
     - [x] Show the number of lines in the status line
     - [x] Install nerdfont in the work laptop
@@ -111,5 +111,6 @@
     - [x] better-escape.nvim
     - [?] trouble.nvim
     - [ ] Harpoon
+    - [?] Aerial
 - [ ] Look at the plugins in `lua/kickstart/plugins`
     - [ ] `nvim-lint`
