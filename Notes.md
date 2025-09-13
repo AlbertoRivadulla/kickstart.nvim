@@ -84,7 +84,7 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - Opening files
     - `Enter`, `o` open the file in a new buffer move the cursor to it
     - `Tab` open the file in a new buffer and keep the cursor on the tree
-    - `Ctrl+v` open the file in the buffer dividing it vertically
+    - `Ctrl+v` open the file in a new vertical split
 - File management
     - `a` create files or folders. A folder is created by following the name with a `/`
     - `r` rename file
