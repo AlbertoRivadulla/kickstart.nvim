@@ -44,8 +44,8 @@
         - [ ] Check `lua/kickstart/plugins/debug.lua`
 - [x] ~~Autoformat~~
     - [x] Currently disabled
-- [ ] Autocomplete (blink.cmp)
-    - [ ] Take a look at the defined keymaps
+- [/] Autocomplete (blink.cmp)
+    - [x] Take a look at the defined keymaps
     - [ ] Consider `mini.completion`
 - [x] nvim-tree
     - [x] Show files with git changes
@@ -67,14 +67,7 @@
         - [x] Find a way to show both side by side
 - [ ] Support for Golang
     - [ ] Plugin `fatih/vim-go`
-- [ ] Separate config in different files
-    - [ ] Configurations of plugins
-        - [ ] Add plugins in `lua/custom/plugins`, and import them in `lua/custom/plugins.init.lua`
-            - [ ] Move the configuration files for the plugins to that folder
-    - [ ] File for key maps
-    - [ ] File for autocommand
-    - Example [link](https://github.com/dam9000/kickstart-modular.nvim/tree/master)
-    - Example [link](https://github.com/apereiroc/dotfiles/tree/main)
+- [x] Separate config in different files
 - [/] Notes with keyboard shortcuts (grr, gri, ...)
     - [x] LSP
         - [x] `gf` to open the link to a file
@@ -102,7 +95,7 @@
         - [x] Go to line number
         - [x] Vertical split with `:vs`
         - [ ] Print current file path (needs implementation)
-- [/] Other
+- [x] Other
     - [x] Show the number of lines in the status line
     - [x] Install nerdfont in the work laptop
     - [x] Use `jk` for `Esc` in insert mode
