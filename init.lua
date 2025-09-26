@@ -25,4 +25,6 @@ require 'config.keymaps'
 
 require 'config.autocmds'
 
+require 'config.commands'
+
 require 'lazyloader'

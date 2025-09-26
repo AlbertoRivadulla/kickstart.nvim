@@ -3,9 +3,10 @@
         - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
     - [ ] Harpoon
     - [x] Write the description of the command `<leader>x`
-    - [x] Telescope search 
-        - [x] Consider also hidden files and directories when searching files
-        - [x] Search with grep in given directory
+- [/] Telescope search
+    - [ ] Consider also hidden files and directories when searching files
+    - [x] Search with grep in given directory
+    - [ ] When opening a search result, do not scroll to the right so it can be fully displayed (for cases of long lines)
 - [/] Note taking in Markdown
     - [x] Links between notes
     - [x] Bullet points for TODO etc
@@ -21,6 +22,7 @@
     - [?] Embed and open images
         - Using `gx` on an image's file path it is opened by the OS
     - [ ] When writing a link to a file (with `[[..]]`), it should provide autocompletion suggestions
+    - [ ] Automatic wrapping of lines over 120 characters
 - [/] LSP
     - [x] Install servers
         - [x] C++ (clangd)
@@ -65,6 +67,7 @@
     - [x] Change the color of the text for current line blame (`<leader>tb`)
     - [x] Git changes should be seen in the left bar even with diagnostics or todo-comments signs
         - [x] Find a way to show both side by side
+    - [ ] Make it easier to resolve merge conflicts
 - [ ] Support for Golang
     - [ ] Plugin `fatih/vim-go`
 - [x] Separate config in different files
@@ -107,3 +110,8 @@
     - [?] Aerial
 - [ ] Look at the plugins in `lua/kickstart/plugins`
     - [ ] `nvim-lint`
+- [/] Implement macros
+    - [x] `:today` to open or create the daily journal note
+        - [x] It must create the note in a given directory, if it does not exists
+            - The directory is specified in a configuration file `.nvim_config`, located at the root of the working directory.
+        - [x] Organize the notes in months and weeks

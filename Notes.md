@@ -36,6 +36,7 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
     - `<leader>ca` go to code action
     - `<leader>ds` open document symbols
     - `<leader>ws` open workspace symbols
+    - `<leader>th` toggle inline hints
     - `K` show documentation of the word under the cursor
     - `gr` go to reference
     - `gi` go to implementation
