@@ -115,3 +115,4 @@
         - [x] It must create the note in a given directory, if it does not exists
             - The directory is specified in a configuration file `.nvim_config`, located at the root of the working directory.
         - [x] Organize the notes in months and weeks
+    - [ ] Open a floating window (or a new buffer) with my notes on Neovim commands.
