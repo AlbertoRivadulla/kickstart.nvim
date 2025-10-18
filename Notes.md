@@ -60,6 +60,15 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `<leader>/` fuzzily search in the current buffer
 - `<leader>s/` live grep in the open files
 
+## Telekasten
+- `<leader>zn` new note
+- `<leader>zf` find notes by title
+- `<leader>zg` grep in notes
+- `<leader>zt` show tags
+- `<leader>zz` follow link
+- `<leader>zb` show backlinks to the current file
+- `<leader>zp` open the Telekasten panel
+
 ## Gitsigns
 - `<leader>hd` show the diff of the current buffer with the head
     - `:Gitsigns diffthis <revision>` show the diff with a given revision

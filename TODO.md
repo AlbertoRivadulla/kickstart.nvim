@@ -23,6 +23,11 @@
         - Using `gx` on an image's file path it is opened by the OS
     - [ ] When writing a link to a file (with `[[..]]`), it should provide autocompletion suggestions
     - [ ] Automatic wrapping of lines over 120 characters
+    - [/] Plugin `telekasten`
+        - [x] Basic configuration of the plugin
+        - [ ] Shortcut to backup notes to repository
+        - [ ] Configure the directory of the notes
+    - [ ] Plugin `markdown-preview`
 - [/] LSP
     - [x] Install servers
         - [x] C++ (clangd)
