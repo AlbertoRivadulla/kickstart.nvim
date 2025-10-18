@@ -69,4 +69,7 @@ require('lazy').setup({
 
   -- Zettelkasten/wiki
   require 'plugins.telekasten',
+
+  -- Better markdown rendering
+  require 'plugins.render-markdown'
 })

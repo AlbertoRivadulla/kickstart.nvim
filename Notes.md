@@ -84,6 +84,7 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 ## nvim-tree
 - Reference [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
 - General
+    - [!] algo
     - `R` refresh
     - `H` hide/display hidden files and folders
     - `W` collapse the entire tree

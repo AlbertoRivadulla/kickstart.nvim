@@ -41,6 +41,9 @@ return {
         -- Optional: check the buffer path more strictly
         if not vim.fn.expand("%:p"):match(home) then return end
 
+        -- Make the filetype markdown
+        vim.bo.filetype = "markdown"
+
         -- Call insert link automatically when we start typing a link
         vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
 
@@ -52,7 +55,6 @@ return {
         -- end, opts)
       end,
     })
-
 
     end,
   }

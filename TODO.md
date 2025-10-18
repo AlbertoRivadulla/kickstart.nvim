@@ -27,7 +27,9 @@
         - [x] Basic configuration of the plugin
         - [ ] Shortcut to backup notes to repository
         - [ ] Configure the directory of the notes
-    - [ ] Plugin `markdown-preview`
+    - [x] Better markdown rendering with `render-markdown.nvim`
+        - [ ] Check latex rendering
+        - [ ] Improve rendering of [/], [?] and [!]
 - [/] LSP
     - [x] Install servers
         - [x] C++ (clangd)
