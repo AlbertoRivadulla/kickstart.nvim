@@ -46,6 +46,16 @@ return {
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
         pickers = {
+          find_files = {
+            file_ignore_patterns = { 'node_modules', '.git/', '.venv' },
+            hidden = true
+          },
+          live_grep = {
+            file_ignore_patterns = { 'node_modules', '.git/', '.venv' },
+            additional_args = function(_)
+              return { "--hidden" }
+            end
+          },
           ["buffers"] = {
             show_all_buffers = true,
             -- Show most recent buffers first
