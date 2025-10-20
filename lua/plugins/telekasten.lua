@@ -15,6 +15,7 @@ return {
         date_format = "%Y-%m-%d",
         tag_notation = "#tag",
         command_palette_theme = 'popup',
+        auto_set_filetype = false,
 
         -- Integrate with Telescope
         telescope = true,
