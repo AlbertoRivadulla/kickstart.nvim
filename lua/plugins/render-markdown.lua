@@ -230,7 +230,7 @@ return {
           -- | scope_highlight | optional highlight for item associated with custom checkbox |
           -- stylua: ignore
           custom = {
-              slash = { raw = '[/]', rendered = '[/]', highlight = 'TodoInProgress', scope_highlight = nil },
+              slash = { raw = '[/]', rendered = '[/]', highlight = 'RenderMarkdownChecked', scope_highlight = nil },
               question = { raw = '[?]', rendered = '[?]', highlight = 'TodoUncertain', scope_highlight = nil },
               warn = { raw = '[!]', rendered = '[!]', highlight = 'TodoWarning', scope_highlight = nil },
           }
