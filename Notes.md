@@ -116,6 +116,9 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `Ctrl+n` next item
 - `Ctrl+y` select item
 
+## Markdown files
+- `<leader>pl` paste a link with the title obtained from the URL, if possible
+
 ## Plugin management
 - `:Lazy` plugin management menu
 - `:Mason` package manager used for LSPs etc.
