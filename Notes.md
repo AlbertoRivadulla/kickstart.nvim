@@ -60,6 +60,15 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `<leader>/` fuzzily search in the current buffer
 - `<leader>s/` live grep in the open files
 
+## Telekasten
+- `<leader>zn` new note
+- `<leader>zf` find notes by title
+- `<leader>zg` grep in notes
+- `<leader>zt` show tags
+- `<leader>zz` follow link
+- `<leader>zb` show backlinks to the current file
+- `<leader>zp` open the Telekasten panel
+
 ## Gitsigns
 - `<leader>hd` show the diff of the current buffer with the head
     - `:Gitsigns diffthis <revision>` show the diff with a given revision
@@ -75,6 +84,7 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 ## nvim-tree
 - Reference [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
 - General
+    - [!] algo
     - `R` refresh
     - `H` hide/display hidden files and folders
     - `W` collapse the entire tree
@@ -105,6 +115,9 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `Ctrl+p` previous item
 - `Ctrl+n` next item
 - `Ctrl+y` select item
+
+## Markdown files
+- `<leader>pl` paste a link with the title obtained from the URL, if possible
 
 ## Plugin management
 - `:Lazy` plugin management menu

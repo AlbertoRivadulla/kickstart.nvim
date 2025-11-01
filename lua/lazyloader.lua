@@ -66,4 +66,10 @@ require('lazy').setup({
 
   -- File tree
   require 'plugins.nvim-tree',
+
+  -- Zettelkasten/wiki
+  require 'plugins.telekasten',
+
+  -- Better markdown rendering
+  require 'plugins.render-markdown'
 })

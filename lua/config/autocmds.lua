@@ -45,6 +45,17 @@ vim.fn.matchadd("TodoInProgress", "\\[/\\]")
 vim.fn.matchadd("TodoUncertain", "\\[?\\]")
 vim.fn.matchadd("TodoWarning", "\\[!\\]")
 
+-- Disable inserting comments automatically when adding a new line below/above a comment
+--  'r' -> pressing 'Enter' in insert mode
+--  'o' -> pressing 'O' in normal mode
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions:remove({ "o" })
+    -- vim.opt.formatoptions:remove({ "r", "o" })
+  end
+})
+
 -- --- Automatically continue bullet point lists in Markdown files
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = "markdown",
@@ -60,3 +71,13 @@ vim.fn.matchadd("TodoWarning", "\\[!\\]")
 -- 		}
 -- 	end,
 -- })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "sh", "bash" },
+  -- command = "setlocal noexpandtab",
+  callback = function()
+    vim.opt_local.expandtab = false
+    -- vim.opt_local.shiftwidth = 4
+    -- vim.opt_local.tabstop = 4
+  end,
+})

@@ -23,6 +23,13 @@
         - Using `gx` on an image's file path it is opened by the OS
     - [ ] When writing a link to a file (with `[[..]]`), it should provide autocompletion suggestions
     - [ ] Automatic wrapping of lines over 120 characters
+    - [/] Plugin `telekasten`
+        - [x] Basic configuration of the plugin
+        - [ ] Shortcut to backup notes to repository
+        - [ ] Configure the directory of the notes
+    - [x] Better markdown rendering with `render-markdown.nvim`
+        - [ ] Check latex rendering
+        - [ ] Improve rendering of [/], [?] and [!]
 - [/] LSP
     - [x] Install servers
         - [x] C++ (clangd)
@@ -110,9 +117,10 @@
     - [?] Aerial
 - [ ] Look at the plugins in `lua/kickstart/plugins`
     - [ ] `nvim-lint`
-- [/] Implement macros
+- [/] Implement macros and shortcuts
     - [x] `:today` to open or create the daily journal note
         - [x] It must create the note in a given directory, if it does not exists
             - The directory is specified in a configuration file `.nvim_config`, located at the root of the working directory.
         - [x] Organize the notes in months and weeks
     - [ ] Open a floating window (or a new buffer) with my notes on Neovim commands.
+    - [ ] Paste a URL with its title automatically
