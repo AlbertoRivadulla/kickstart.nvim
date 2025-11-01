@@ -209,7 +209,7 @@ return {
               -- Replaces '[ ]' of 'task_list_marker_unchecked'.
               icon = '󰄱 ',
               -- Highlight for the unchecked icon.
-              highlight = 'RenderMarkdownUnchecked',
+              highlight = 'RenderMarkdownTodo',
               -- Highlight for item associated with unchecked checkbox.
               scope_highlight = nil,
           },
@@ -230,10 +230,30 @@ return {
           -- | scope_highlight | optional highlight for item associated with custom checkbox |
           -- stylua: ignore
           custom = {
-              slash = { raw = '[/]', rendered = '[/]', highlight = 'RenderMarkdownChecked', scope_highlight = nil },
+              slash = { raw = '[/]', rendered = '[/]', highlight = 'RenderMarkdownTodo', scope_highlight = nil },
               question = { raw = '[?]', rendered = '[?]', highlight = 'TodoUncertain', scope_highlight = nil },
               warn = { raw = '[!]', rendered = '[!]', highlight = 'TodoWarning', scope_highlight = nil },
           }
+        },
+        html = {
+          -- Turn on / off all HTML rendering.
+          enabled = true,
+          -- Additional modes to render HTML.
+          render_modes = false,
+          comment = {
+              -- Turn on / off HTML comment concealing.
+              conceal = false,
+              -- Optional text to inline before the concealed comment.
+              text = nil,
+              -- Highlight for the inlined text.
+              highlight = 'RenderMarkdownHtmlComment',
+          },
+          -- HTML tags whose start and end will be hidden and icon shown.
+          -- The key is matched against the tag name, value type below.
+          -- | icon            | optional icon inlined at start of tag           |
+          -- | highlight       | optional highlight for the icon                 |
+          -- | scope_highlight | optional highlight for item associated with tag |
+          tag = {},
         },
       })
 
@@ -243,6 +263,7 @@ return {
       vim.api.nvim_set_hl(0, "RenderMarkdownH3", { fg = "#ffaa22", bg = '#402626', bold = true })
       vim.api.nvim_set_hl(0, "RenderMarkdownH4", { fg = "#55ff55", bg = '#402626', bold = true })
       vim.api.nvim_set_hl(0, "RenderMarkdownH5", { fg = "#55ffff", bg = '#402626', italic = true })
+      vim.api.nvim_set_hl(0, "RenderMarkdownH6", { fg = "#5555ff", bg = '#402626', italic = true })
       vim.api.nvim_set_hl(0, "RenderMarkdownH6", { fg = "#5555ff", bg = '#402626', italic = true })
     end
   }
