@@ -1,7 +1,7 @@
-- [/] Manage buffers
+- [x] Manage buffers
     - [x] ~~Tabs~~
         - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
-    - [ ] Harpoon
+    - [x] Harpoon
     - [x] Write the description of the command `<leader>x`
 - [/] Telescope search
     - [ ] Consider also hidden files and directories when searching files
@@ -85,7 +85,7 @@
         - [x] Shortcuts to open/expand diagnostics
             - `<leader>di` to display diagnostics inline (virtual text)
             - `<leader>de` to display diagnostics in additional lines (virtual lines)
-    - [ ] Harpoon (if installed)
+    - [x] Harpoon (if installed)
     - [x] Telescope and search
         - [ ] Case sensitive search
     - [x] Gitsigns (in lua/kickstart/plugins/gitsigns.lua)
@@ -113,7 +113,6 @@
     - [x] ~~satellite.nvim~~ (instead of scrollbar)
     - [x] better-escape.nvim
     - [?] trouble.nvim
-    - [ ] Harpoon
     - [?] Aerial
 - [ ] Look at the plugins in `lua/kickstart/plugins`
     - [ ] `nvim-lint`
@@ -123,4 +122,4 @@
             - The directory is specified in a configuration file `.nvim_config`, located at the root of the working directory.
         - [x] Organize the notes in months and weeks
     - [ ] Open a floating window (or a new buffer) with my notes on Neovim commands.
-    - [ ] Paste a URL with its title automatically
+    - [x] Paste a URL with its title automatically

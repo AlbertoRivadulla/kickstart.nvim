@@ -71,5 +71,8 @@ require('lazy').setup({
   require 'plugins.telekasten',
 
   -- Better markdown rendering
-  require 'plugins.render-markdown'
+  require 'plugins.render-markdown',
+
+  -- Fast switching between buffers
+  require 'plugins.harpoon'
 })

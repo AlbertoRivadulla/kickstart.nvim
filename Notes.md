@@ -60,6 +60,12 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `<leader>/` fuzzily search in the current buffer
 - `<leader>s/` live grep in the open files
 
+## Harpoon
+- `<leader>a` add file to Harpoon
+- `<leader>h` open Harpoon menu
+    - Inside the menu, move files around by deleting/pasting them as when editing a regular file
+- `<leader>1-0` jump to file 1-10
+
 ## Telekasten
 - `<leader>zn` new note
 - `<leader>zf` find notes by title
@@ -83,8 +89,9 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 
 ## nvim-tree
 - Reference [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
+- In normal mode
+    - `<leader>e` toggle nvim-tree
 - General
-    - [!] algo
     - `R` refresh
     - `H` hide/display hidden files and folders
     - `W` collapse the entire tree
