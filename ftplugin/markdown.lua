@@ -1,6 +1,31 @@
 -- Enable word wrap locally
 vim.opt_local.wrap = true
 
+-- Characters to escape in the HTML response
+local named_entities = {
+    ["amp"] = "&",
+    ["lt"]  = "<",
+    ["gt"]  = ">",
+    ["quot"] = "\"",
+    ["apos"] = "'"
+}
+
+function decode_html_entities(str)
+    -- Decode named entities
+    str = str:gsub("&(%a+);", function(entity)
+        return named_entities[entity] or ("&" .. entity .. ";")
+    end)
+    -- -- Decode numeric entities (decimal)
+    -- str = str:gsub("&#(%d+);", function(num)
+    --     return string.char(tonumber(num))
+    -- end)
+    -- -- Decode numeric entities (hexadecimal)
+    -- str = str:gsub("&#x(%x+);", function(hex)
+    --     return string.char(tonumber(hex, 16))
+    -- end)
+    return str
+end
+
 -- Automatically fetch the title from an URL, and paste them in Markdown format
 local function fetch_title(url)
     -- Extract the title from the response to curl on the URL
@@ -17,7 +42,7 @@ local function fetch_title(url)
     if result == "" then
         return nil
     end
-    return result
+    return decode_html_entities(result)
 end
 
 vim.api.nvim_create_user_command("PasteMarkdownLink", function()
