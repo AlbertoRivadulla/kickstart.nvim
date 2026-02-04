@@ -60,6 +60,8 @@ controlled with the variable `textwidth`) ## LSP
 - `<leader>gd` live grep in the chosen directory
 - `<leader>/` fuzzily search in the current buffer
 - `<leader>s/` live grep in the open files
+Inside the search prompt:
+- `Ctrl+<leader>` refine the search
 
 ## Harpoon
 - `<leader>a` add file to Harpoon
