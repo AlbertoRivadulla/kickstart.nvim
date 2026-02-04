@@ -220,7 +220,17 @@ return {
             "compile_commands.json", ".clangd", "../.clangd"
           ),
         },
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                unusedparams = true,
+              },
+              staticcheck = true,
+              gofumpt = true,
+            },
+          },
+        },
         pyright = {},
         -- basedpyright = {
         --   mason = false,
@@ -278,6 +288,9 @@ return {
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = {
+                globals = { "vim" },
+              },
             },
           },
         },
