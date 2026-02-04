@@ -36,3 +36,10 @@ vim.api.nvim_create_user_command("Today", function()
     vim.cmd.edit(file_path)
 
 end, { desc = "Open a daily note" })
+
+vim.api.nvim_create_user_command("Format", function()
+  vim.lsp.buf.format({
+    async = false,
+    timeout_ms = 5000,
+  })
+end, { desc = "Format current buffer" })

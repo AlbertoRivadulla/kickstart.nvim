@@ -1,27 +1,27 @@
+# Configure and install plugins To check the current status of your plugins,
+run ```:Lazy```
 
-# Configure and install plugins
- To check the current status of your plugins, run
-   ```:Lazy```
+# Loading plugins Plugins can be configured to **run Lua code** when they are
+loaded. This is often very useful to both group configuration, as well as
+handle lazy loading plugins that don't need to be loaded immediately at
+startup. For example, in the configuration for `folke/which-key.nvim` we use:
+```event = 'VimEnter'``` which loads which-key before all the UI elements are
+loaded. Events can be normal autocommands events (`:help autocmd-events`).
+Then, because we use the `opts` key (recommended), the configuration runs after
+the plugin has been loaded as `require(MODULE).setup(opts)`.
 
-# Loading plugins
-Plugins can be configured to **run Lua code** when they are loaded. This is often very useful to both group configuration, 
-as well as handle lazy loading plugins that don't need to be loaded immediately at startup.
-For example, in the configuration for `folke/which-key.nvim` we use:
-    ```event = 'VimEnter'```
-which loads which-key before all the UI elements are loaded. Events can be normal autocommands events 
-(`:help autocmd-events`). Then, because we use the `opts` key (recommended), the configuration runs after the plugin has 
-been loaded as `require(MODULE).setup(opts)`.
-
-Plugins can **specify dependencies**. The dependencies are proper plugin specifications as well - anything you do for a 
-plugin at the top level, you can do for a dependency.
-Use the `dependencies` key to specify the dependencies of a particular plugin
+Plugins can **specify dependencies**. The dependencies are proper plugin
+specifications as well - anything you do for a plugin at the top level, you can
+do for a dependency. Use the `dependencies` key to specify the dependencies of
+a particular plugin
 
 # Keyboard shortcuts
 
 ## General
 - `:<line_nr>` go to the given line number
 - `:vs` vertical split
-## LSP
+- `gq` or `gqq` wrap lines to a maximum of 80 characters (this can be
+controlled with the variable `textwidth`) ## LSP
 - Global defaults
     - `gra` selects a code action available at the cursor position
     - `grr` list the references of the current symbol
@@ -45,6 +45,7 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
     - `gT` go to type definition
     - `gf` open the link to a file
     - `gx` open a URL in the browser
+    - `:Format` format the current file (if the attached LSP allows it)
 
 ## Telescope
 - `<leader>sh` search help
@@ -59,11 +60,14 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `<leader>gd` live grep in the chosen directory
 - `<leader>/` fuzzily search in the current buffer
 - `<leader>s/` live grep in the open files
+Inside the search prompt:
+- `Ctrl+<leader>` refine the search
 
 ## Harpoon
 - `<leader>a` add file to Harpoon
 - `<leader>h` open Harpoon menu
-    - Inside the menu, move files around by deleting/pasting them as when editing a regular file
+    - Inside the menu, move files around by deleting/pasting them as when
+    editing a regular file
 - `<leader>1-0` jump to file 1-10
 
 ## Telekasten
@@ -88,7 +92,8 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 - `<leader>td` show notes in the current file
 
 ## nvim-tree
-- Reference [link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
+- Reference
+[link](https://docs.rockylinux.org/books/nvchad/nvchad_ui/nvimtree/)
 - In normal mode
     - `<leader>e` toggle nvim-tree
 - General
@@ -96,7 +101,8 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
     - `H` hide/display hidden files and folders
     - `W` collapse the entire tree
     - `-` go one directory up
-    - `s` (system) open a file with the system application set by default for that file type
+    - `s` (system) open a file with the system application set by default for
+    that file type
     - `f` (find) interactive file search
     - `Ctrl+k` display information about the file
 - Opening files
@@ -104,7 +110,8 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
     - `Tab` open the file in a new buffer and keep the cursor on the tree
     - `Ctrl+v` open the file in a new vertical split
 - File management
-    - `a` create files or folders. A folder is created by following the name with a `/`
+    - `a` create files or folders. A folder is created by following the name
+    with a `/`
     - `r` rename file
     - `Ctrl+r` rename file regardless of its original name
     - `d` delete file or folder
@@ -129,5 +136,7 @@ Use the `dependencies` key to specify the dependencies of a particular plugin
 ## Plugin management
 - `:Lazy` plugin management menu
 - `:Mason` package manager used for LSPs etc.
+- `:LspInfo` information about the LSPs installed and the one used in the
+current buffer
 
 

@@ -37,6 +37,7 @@
             - [ ] Make use of .clang-format
             - [ ] Take into account `compile_commands.json`
         - [x] Go (gopls)
+            - [x] Add a formatter
         - [x] Python (pyright)
             - [ ] Find a way to use the environment consistently
         - [x] Bash (bash-language-server)
