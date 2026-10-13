@@ -166,6 +166,16 @@ return {
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end
+
+          -- If a client supports range formatting, Neovim overwrites a buffer's
+          -- 'formatexpr' with vim.lsp.formatexpr() on attach whenever it was
+          -- empty (see `_set_defaults` in vim/lsp.lua), which hijacks `gq` to
+          -- send an LSP range-formatting request instead of using Vim's
+          -- internal formatter. ftplugin/cpp.lua relies on 'formatexpr' being
+          -- empty to let `gq` wrap comments with 'textwidth', so restore it.
+          if vim.tbl_contains({ 'c', 'cpp' }, vim.bo[event.buf].filetype) then
+            vim.bo[event.buf].formatexpr = ''
+          end
         end,
       })
 
@@ -267,6 +277,7 @@ return {
         bashls = {},
         cmake = {},
         marksman = {},
+        yamlls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --

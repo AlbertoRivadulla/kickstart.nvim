@@ -74,5 +74,7 @@ require('lazy').setup({
   require 'plugins.render-markdown',
 
   -- Fast switching between buffers
-  require 'plugins.harpoon'
+  require 'plugins.harpoon',
+
+  require 'plugins.indent-blankline'
 })
