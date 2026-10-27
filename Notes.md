@@ -19,6 +19,14 @@ specifications as well - anything you do for a plugin at the top level, you can
 do for a dependency. Use the `dependencies` key to specify the dependencies of
 a particular plugin
 
+# Install language servers
+
+With the latest version, of `nvim-treesitter` (branch `main`, instead of the
+old `master`), it is necessary to install language servers by hand. This can be done by running e.g.
+```vim
+:TSInstall bash python javascript typescript json yaml toml html cpp css go rust dockerfile
+```
+
 # Keyboard shortcuts
 
 ## General

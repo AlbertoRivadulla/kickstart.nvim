@@ -1,6 +1,7 @@
 return {
   {
     'petertriho/nvim-scrollbar',
+    branch = "v1",
     config = function()
     require("scrollbar").setup({
       -- Custom cursor highlight

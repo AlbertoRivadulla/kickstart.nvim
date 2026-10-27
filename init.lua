@@ -17,7 +17,7 @@ vim.g.have_nerd_font = true
 -- Reduce the LSP log level
 --  Default "WARN"
 --  It is possible to turn this off with "off"
-vim.lsp.set_log_level("ERROR")
+vim.lsp.log.set_level("ERROR")
 
 require 'config.options'
 
