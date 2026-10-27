@@ -10,7 +10,6 @@ return {
     config = function()
       require("render-markdown").setup({
         enabled = true,
-        conceal = false,
         -- heading = { enabled = true },
         bullet = { enabled = false },
         quote = { enabled = true },
@@ -18,7 +17,6 @@ return {
         link = { enabled = false },
         -- checkbox = { enabled = true },
         pipe_table = { enabled = true },
-        inline = { enabled = false },
 
         code = {
           -- Turn on / off code block & inline code rendering.
@@ -209,7 +207,7 @@ return {
               -- Replaces '[ ]' of 'task_list_marker_unchecked'.
               icon = '󰄱 ',
               -- Highlight for the unchecked icon.
-              highlight = 'RenderMarkdownTodo',
+              highlight = 'TodoUnchecked',
               -- Highlight for item associated with unchecked checkbox.
               scope_highlight = nil,
           },
@@ -217,7 +215,7 @@ return {
               -- Replaces '[x]' of 'task_list_marker_checked'.
               icon = '󰱒 ',
               -- Highlight for the checked icon.
-              highlight = 'RenderMarkdownChecked',
+              highlight = 'TodoChecked',
               -- Highlight for item associated with checked checkbox.
               scope_highlight = nil,
           },
@@ -230,7 +228,7 @@ return {
           -- | scope_highlight | optional highlight for item associated with custom checkbox |
           -- stylua: ignore
           custom = {
-              slash = { raw = '[/]', rendered = '[/]', highlight = 'RenderMarkdownTodo', scope_highlight = nil },
+              slash = { raw = '[/]', rendered = '[/]', highlight = 'TodoInProgress', scope_highlight = nil },
               question = { raw = '[?]', rendered = '[?]', highlight = 'TodoUncertain', scope_highlight = nil },
               warn = { raw = '[!]', rendered = '[!]', highlight = 'TodoWarning', scope_highlight = nil },
           }
